@@ -101,7 +101,7 @@ function handleFormSubmit(event) {
     })
     .catch(error => {
         console.error('Erro:', error);
-        alert('Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato diretamente por email: lucianoespindola@gmail.com');
+        alert('Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato diretamente por email: wellington.aquino@lorventcapital.com.br');
     })
     .finally(() => {
         btn.innerText = originalText;

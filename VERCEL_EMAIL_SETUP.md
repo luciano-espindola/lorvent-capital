@@ -13,7 +13,7 @@
 2. Vá em **Settings** > **Environment Variables**
 3. Adicione as variáveis:
    - `RESEND_API_KEY`: Sua chave API do Resend
-   - `TO_EMAIL`: lucianoespindola@gmail.com
+   - `TO_EMAIL`: wellington.aquino@lorventcapital.com.br
 4. Clique em **Save**
 
 ### Passo 3: Verificar Domínio (Opcional)
@@ -26,7 +26,7 @@
 2. Crie uma API Key
 3. Configure na Vercel:
    - `SENDGRID_API_KEY`: Sua chave API
-   - `TO_EMAIL`: lucianoespindola@gmail.com
+   - `TO_EMAIL`: wellington.aquino@lorventcapital.com.br
 
 ## Opção 3: Usar EmailJS (Mais Simples, mas requer configuração manual)
 
@@ -37,7 +37,7 @@ Veja o arquivo `EMAILJS_SETUP.md` para instruções detalhadas.
 1. Acesse: https://formspree.io/
 2. Crie uma conta gratuita
 3. Crie um novo formulário
-4. Configure o email de destino: lucianoespindola@gmail.com
+4. Configure o email de destino: wellington.aquino@lorventcapital.com.br
 5. Copie o endpoint (ex: https://formspree.io/f/xxxxx)
 6. Atualize o formulário no HTML:
 

@@ -24,7 +24,7 @@ A chave de API do Resend foi fornecida. Agora você precisa configurá-la na Ver
    
    **Variável 2:**
    - Key: `TO_EMAIL`
-   - Value: `lucianoespindola@gmail.com`
+   - Value: `wellington.aquino@lorventcapital.com.br`
    - Environment: Production, Preview, Development (marque todos)
 
 4. **Salve e Faça Redeploy**
@@ -35,7 +35,7 @@ A chave de API do Resend foi fornecida. Agora você precisa configurá-la na Ver
 
 ## ✅ Após Configurar
 
-O formulário de contato começará a enviar emails automaticamente para `lucianoespindola@gmail.com` sempre que alguém preencher e enviar o formulário.
+O formulário de contato começará a enviar emails automaticamente para `wellington.aquino@lorventcapital.com.br` sempre que alguém preencher e enviar o formulário.
 
 ## 📧 Formato do Email Recebido
 

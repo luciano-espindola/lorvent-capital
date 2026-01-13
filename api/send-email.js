@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Campos obrigatórios faltando' });
   }
 
-  const toEmail = process.env.TO_EMAIL || 'lucianoespindola@gmail.com';
+  const toEmail = process.env.TO_EMAIL || 'wellington.aquino@lorventcapital.com.br';
   const resendApiKey = process.env.RESEND_API_KEY;
 
   // Se não tiver Resend configurado, usar fallback simples

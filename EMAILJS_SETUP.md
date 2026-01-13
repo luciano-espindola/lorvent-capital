@@ -65,6 +65,6 @@ Se preferir uma solução ainda mais simples, pode usar Formspree:
 1. Acesse: https://formspree.io/
 2. Crie uma conta gratuita
 3. Crie um novo formulário
-4. Configure o email de destino: lucianoespindola@gmail.com
+4. Configure o email de destino: wellington.aquino@lorventcapital.com.br
 5. Copie o endpoint do formulário
 6. Atualize o `action` do formulário no HTML
