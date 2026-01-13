@@ -76,7 +76,7 @@ Este email foi enviado automaticamente através do formulário de contato.
         'Authorization': `Bearer ${resendApiKey}`
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev', // Use seu domínio verificado após configurar
+        from: 'onboarding@resend.dev', // Email padrão do Resend (pode usar domínio próprio depois)
         to: toEmail,
         subject: 'Nova Solicitação de Consultoria - Lorvent Capital',
         text: emailContent,
