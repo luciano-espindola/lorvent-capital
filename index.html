@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lorvent Capital - Consultoria independente em seguros e gestão de riscos, focada na proteção do patrimônio familiar e corporativo.">
+    <title>Lorvent Capital | Wealth & Risk Management</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="brand">
+                    <img src="images/lorvent-capital-sem-fundo.png" alt="Lorvent Capital Logo">
+                </a>
+                <div class="nav-links">
+                    <a href="#manifesto">Manifesto</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#pillars">Pilares</a>
+                    <a href="#about">Sobre</a>
+                </div>
+                <a href="#contact" class="cta-button">Fale Conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Seu patrimônio,<br>sua segurança,<br><span class="text-gold">nossa prioridade.</span></h1>
+            <p class="fade-in">Consultoria independente, técnica e transparente, onde cada solução é construída sob medida para proteger o que você construiu.</p>
+            <div class="hero-buttons fade-in">
+                <button onclick="scrollToSection('contact')" class="btn-primary">Proteger meu Patrimônio</button>
+                <button onclick="scrollToSection('services')" class="btn-secondary">Nossas Soluções</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="manifesto">
+        <div class="container">
+            <div class="section-title">Manifesto Lorvent</div>
+            <div class="manifesto-grid">
+                <div class="manifesto-text">
+                    <h2>Segurança financeira não é um produto — <span class="text-gold">é uma experiência.</span></h2>
+                    <p>Uma jornada que exige clareza, cuidado e decisões responsáveis. Por isso, a Lorvent Capital nasceu com um propósito: oferecer uma consultoria independente, técnica e transparente.</p>
+                    <p>Nos comprometemos com excelência, integridade e precisão. E buscamos ir além do óbvio, transformando proteção financeira em estratégia, planejamento e tranquilidade.</p>
+                </div>
+                <div class="manifesto-card">
+                    <p>Trabalhamos com liberdade. Não representamos uma seguradora — representamos o cliente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">Nossas Soluções</div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('family')">Para Pessoa Física (Family Office)</button>
+                <button class="tab-btn" onclick="openTab('corporate')">Para Pessoa Jurídica</button>
+            </div>
+
+            <!-- Family Office Grid -->
+            <div id="family" class="service-grid active">
+                <div class="service-card">
+                    <i class="fa-solid fa-umbrella service-icon"></i>
+                    <h3>Previdência Privada</h3>
+                    <p>Planejamento de longo prazo para garantir qualidade de vida futura.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-chart-line service-icon"></i>
+                    <h3>Investimentos</h3>
+                    <p>Estratégias personalizadas para crescimento patrimonial.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-file-invoice-dollar service-icon"></i>
+                    <h3>Planejamento Financeiro</h3>
+                    <p>Organização e otimização de recursos para atingir seus objetivos.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-user-shield service-icon"></i>
+                    <h3>Planejamento Sucessório</h3>
+                    <p>Transmissão eficiente de bens, garantindo a continuidade do legado.</p>
+                </div>
+                 <div class="service-card">
+                    <i class="fa-solid fa-heart-pulse service-icon"></i>
+                    <h3>Seguro de Vida</h3>
+                    <p>Proteção financeira para você e sua família em momentos críticos.</p>
+                </div>
+                 <div class="service-card">
+                    <i class="fa-solid fa-notes-medical service-icon"></i>
+                    <h3>Planos de Saúde</h3>
+                    <p>Acesso à melhor medicina com gestão eficiente.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-house service-icon"></i>
+                    <h3>Consórcio de Imóveis</h3>
+                    <p>Estratégia inteligente para aquisição de patrimônio imobiliário.</p>
+                </div>
+                 <div class="service-card">
+                    <i class="fa-solid fa-piggy-bank service-icon"></i>
+                    <h3>Capitalização</h3>
+                    <p>Soluções financeiras diversificadas.</p>
+                </div>
+            </div>
+
+            <!-- Corporate Grid -->
+            <div id="corporate" class="service-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-briefcase service-icon"></i>
+                    <h3>Planejamento Financeiro</h3>
+                    <p>Estruturação financeira estratégica para empresas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-sitemap service-icon"></i>
+                    <h3>Planejamento Sucessório</h3>
+                    <p>Garantia da continuidade dos negócios e governança.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-building-shield service-icon"></i>
+                    <h3>Seguros Corporativos</h3>
+                    <p>Frota, Patrimonial, Financeiro e Responsabilidade Civil.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-users service-icon"></i>
+                    <h3>Benefícios Corporativos</h3>
+                    <p>Vida em grupo, Saúde, Previdência e Programas de Qualidade de Vida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section id="pillars" class="pillars">
+        <div class="container">
+            <div class="section-title">4 Pilares de Atuação</div>
+            <div class="pillars-grid">
+                <div class="pillar-item">
+                    <h4>Wealth Management</h4>
+                    <p>Gestão estratégica de ativos e previdência complementar.</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>Estate Planning</h4>
+                    <p>Planejamento sucessório e proteção de bens.</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>Risk Management</h4>
+                    <p>Seguros de alta complexidade e blindagem patrimonial.</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>Corporate Benefits & Risk</h4>
+                    <p>Consultoria para Middle e Large Corporate com foco em governança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-title">Nossa Identidade</div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Missão</h3>
+                    <p>Oferecer consultoria independente com atendimento humano e personalizado.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <h3>Visão</h3>
+                    <p>Ser a corretora independente mais confiável e estratégica do mercado.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fa-regular fa-gem"></i>
+                    <h3>Valores</h3>
+                    <p>Independência, Transparência, Sofisticação, Excelência Técnica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Company/Founder -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="section-title">Sobre a Lorvent Capital</div>
+                <p>A Lorvent Capital é uma boutique financeira inspirada no conceito de Multi-Family Office. Unimos o rigor técnico da gestão corporativa à personalização extrema necessária para atender clientes de alta renda e famílias empresárias.</p>
+                <p>Fundada por <strong>Wellington Aquino</strong>, executivo com mais de 20 anos de trajetória em multinacionais de Banking, Fintechs e Benefícios.</p>
+                
+                <div class="founder-badge">
+                    <i class="fa-solid fa-certificate"></i> Expertise & Certificações: 4 MBAs, CEA, CPA-20, ANCORD e SUSEP.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="section-title">Está pronto para proteger seu patrimônio?</div>
+            <div class="form-box">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" class="form-control" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail Corporativo ou Pessoal</label>
+                        <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone / WhatsApp</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="(11) 99999-9999" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Perfil</label>
+                        <select id="type" class="form-control">
+                            <option value="individual">Pessoa Física / Family Office</option>
+                            <option value="corporate">Pessoa Jurídica / Empresa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Como podemos ajudar?</label>
+                        <input type="text" id="message" class="form-control" placeholder="Tenho interesse em..." required>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Solicitar Consultoria</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>LORVENT CAPITAL</h2>
+                    <p>Expertise multidisciplinar para garantir a longevidade do seu patrimônio.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Mapa do Site</h4>
+                    <ul>
+                        <li><a href="#header">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="#">contato@lorventcapital.com</a></li>
+                        <li><a href="#">São Paulo, SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Lorvent Capital. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
