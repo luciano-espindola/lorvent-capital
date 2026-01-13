@@ -270,7 +270,7 @@ function initPartnersSlider() {
         resizeTimeout = setTimeout(() => {
             calculateSlideWidth();
             // Reset to first slide if current position is invalid
-            if (currentIndex > logos.length - logosPerView) {
+            if (currentIndex >= totalLogos) {
                 currentIndex = 0;
             }
             updateSlider();
