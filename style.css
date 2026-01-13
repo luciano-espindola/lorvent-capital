@@ -495,7 +495,6 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 0.8rem;
-    transition: transform 0.3s ease;
     flex-shrink: 0;
 }
 
@@ -508,7 +507,6 @@ nav {
     max-height: 130%;
     object-fit: contain;
     filter: grayscale(20%);
-    transition: filter 0.3s ease;
 }
 
 .partner-logo:hover img {
