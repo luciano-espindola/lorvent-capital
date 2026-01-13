@@ -477,8 +477,8 @@ nav {
     position: relative;
     max-width: 1200px;
     margin: 3rem auto 0;
-    overflow: visible;
-    padding: 0 60px;
+    overflow: hidden;
+    padding: 0;
 }
 
 .partners-track {
@@ -520,9 +520,7 @@ nav {
 }
 
 .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: static;
     width: 50px;
     height: 50px;
     background: rgba(12, 18, 32, 0.9);
@@ -532,11 +530,12 @@ nav {
     font-size: 1.2rem;
     cursor: pointer;
     z-index: 10;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    margin: 2rem 0.5rem 0;
 }
 
 .slider-btn:hover {
@@ -550,12 +549,11 @@ nav {
     cursor: not-allowed;
 }
 
-.slider-btn.prev-btn {
-    left: 0;
-}
-
-.slider-btn.next-btn {
-    right: 0;
+.slider-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 /* Form Section */
