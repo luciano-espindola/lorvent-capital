@@ -477,7 +477,8 @@ nav {
     position: relative;
     max-width: 1200px;
     margin: 3rem auto 0;
-    overflow: hidden;
+    overflow: visible;
+    padding: 0 60px;
 }
 
 .partners-track {
@@ -550,11 +551,11 @@ nav {
 }
 
 .slider-btn.prev-btn {
-    left: -25px;
+    left: 0;
 }
 
 .slider-btn.next-btn {
-    right: -25px;
+    right: 0;
 }
 
 /* Form Section */

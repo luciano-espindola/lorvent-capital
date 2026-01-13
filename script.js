@@ -154,7 +154,7 @@ function initPartnersSlider() {
     let logosPerView = 4; // Desktop: 4 logos
     let slideWidth = 0;
     let autoPlayInterval = null;
-    const autoPlayDelay = 5000; // 5 segundos
+    const autoPlayDelay = 4000; // 4 segundos
     
     // Calculate slide width based on viewport
     function calculateSlideWidth() {
@@ -182,11 +182,19 @@ function initPartnersSlider() {
     
     function slideNext() {
         currentIndex++;
-        // Loop: se chegou ao fim, volta ao início
+        // Loop infinito: se chegou ao fim, volta ao início de forma suave
         if (currentIndex > logos.length - logosPerView) {
+            // Desabilita transição temporariamente para reset instantâneo
+            track.style.transition = 'none';
             currentIndex = 0;
+            updateSlider();
+            // Força reflow para aplicar o reset
+            void track.offsetWidth;
+            // Reabilita transição para próxima animação
+            track.style.transition = '';
+        } else {
+            updateSlider();
         }
-        updateSlider();
     }
     
     function slidePrev() {
