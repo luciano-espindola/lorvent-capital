@@ -19,7 +19,7 @@ A chave de API do Resend foi fornecida. Agora você precisa configurá-la na Ver
    
    **Variável 1:**
    - Key: `RESEND_API_KEY`
-   - Value: `re_7XFZ3CMY_8LRz2PW9BYa8vXdrbazWNhs1`
+   - Value: `sua_chave_api_resend_aqui`
    - Environment: Production, Preview, Development (marque todos)
    
    **Variável 2:**
