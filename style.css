@@ -465,6 +465,14 @@ nav {
     background: #ffffff;
 }
 
+.partners-section .section-title {
+    color: var(--primary-color);
+}
+
+.partners-section .section-title::after {
+    background: var(--accent-gold);
+}
+
 .partners-slider {
     position: relative;
     max-width: 1200px;
