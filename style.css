@@ -459,6 +459,96 @@ nav {
     color: var(--accent-gold);
 }
 
+/* Partners Section */
+.partners-section {
+    padding: 6rem 0;
+    background: var(--secondary-color);
+}
+
+.partners-slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    overflow: hidden;
+}
+
+.partners-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+    padding: 1rem 0;
+}
+
+.partner-logo {
+    min-width: 200px;
+    height: 120px;
+    background: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(12, 18, 32, 0.9);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.slider-btn:hover {
+    background: rgba(12, 18, 32, 1);
+    color: var(--accent-gold);
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+}
+
+.slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.slider-btn.prev-btn {
+    left: -25px;
+}
+
+.slider-btn.next-btn {
+    right: -25px;
+}
+
 /* Form Section */
 .contact-section {
     padding: 8rem 0;
@@ -714,5 +804,39 @@ footer {
     .whatsapp-icon {
         width: 35px;
         height: 35px;
+    }
+    
+    /* Partners Section Mobile */
+    .partners-section {
+        padding: 4rem 0;
+    }
+    
+    .partners-slider {
+        margin: 2rem auto 0;
+        padding: 0 3rem;
+    }
+    
+    .partners-track {
+        gap: 1rem;
+    }
+    
+    .partner-logo {
+        min-width: 150px;
+        height: 100px;
+        padding: 1rem;
+    }
+    
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .slider-btn.prev-btn {
+        left: 0;
+    }
+    
+    .slider-btn.next-btn {
+        right: 0;
     }
 }

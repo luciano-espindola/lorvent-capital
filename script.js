@@ -133,4 +133,84 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+    
+    // Initialize partners slider
+    initPartnersSlider();
 });
+
+// Partners Slider
+function initPartnersSlider() {
+    const slider = document.querySelector('.partners-slider');
+    if (!slider) return;
+    
+    const track = slider.querySelector('.partners-track');
+    const prevBtn = slider.querySelector('.prev-btn');
+    const nextBtn = slider.querySelector('.next-btn');
+    const logos = track.querySelectorAll('.partner-logo');
+    
+    if (logos.length === 0) return;
+    
+    let currentIndex = 0;
+    let logosPerView = 4; // Desktop: 4 logos
+    let slideWidth = 0;
+    
+    // Calculate slide width based on viewport
+    function calculateSlideWidth() {
+        const containerWidth = slider.offsetWidth;
+        const gap = 32; // 2rem = 32px
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            logosPerView = 2;
+        } else {
+            logosPerView = window.innerWidth <= 1024 ? 3 : 4;
+        }
+        
+        slideWidth = (containerWidth / logosPerView) + gap;
+    }
+    
+    function updateSlider() {
+        const translateX = -currentIndex * slideWidth;
+        track.style.transform = `translateX(${translateX}px)`;
+        
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= logos.length - logosPerView;
+    }
+    
+    function slideNext() {
+        if (currentIndex < logos.length - logosPerView) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+    
+    function slidePrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', slideNext);
+    prevBtn.addEventListener('click', slidePrev);
+    
+    // Recalculate on resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            calculateSlideWidth();
+            // Reset to first slide if current position is invalid
+            if (currentIndex > logos.length - logosPerView) {
+                currentIndex = Math.max(0, logos.length - logosPerView);
+            }
+            updateSlider();
+        }, 250);
+    });
+    
+    // Initialize
+    calculateSlideWidth();
+    updateSlider();
+}
