@@ -154,7 +154,7 @@ function initPartnersSlider() {
     let logosPerView = 4; // Desktop: 4 logos
     let slideWidth = 0;
     let autoPlayInterval = null;
-    const autoPlayDelay = 4000; // 4 segundos
+    const autoPlayDelay = 2000; // 2 segundos
     
     // Calculate slide width based on viewport
     function calculateSlideWidth() {
