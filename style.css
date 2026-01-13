@@ -613,8 +613,22 @@ footer {
         justify-content: center;
     }
     
+    /* Escurecer imagem do Hero no mobile para melhorar legibilidade */
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(12, 18, 32, 0.6); /* Overlay escuro */
+        z-index: 1;
+    }
+    
     .hero-content {
         text-align: center;
+        position: relative;
+        z-index: 10;
     }
     
     .hero h1 {
@@ -635,6 +649,13 @@ footer {
     
     .hero-buttons {
         flex-direction: column;
+    }
+    
+    /* Ajustar botão "Fale Conosco" no mobile */
+    .cta-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
     }
 }
 
