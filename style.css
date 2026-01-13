@@ -484,7 +484,6 @@ nav {
 .partners-track {
     display: flex;
     gap: 2rem;
-    transition: transform 0.5s ease;
     padding: 1rem 0;
 }
 
