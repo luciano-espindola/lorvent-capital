@@ -153,6 +153,8 @@ function initPartnersSlider() {
     let currentIndex = 0;
     let logosPerView = 4; // Desktop: 4 logos
     let slideWidth = 0;
+    let autoPlayInterval = null;
+    const autoPlayDelay = 3000; // 3 segundos
     
     // Calculate slide width based on viewport
     function calculateSlideWidth() {
@@ -173,28 +175,57 @@ function initPartnersSlider() {
         const translateX = -currentIndex * slideWidth;
         track.style.transform = `translateX(${translateX}px)`;
         
-        // Update button states
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= logos.length - logosPerView;
+        // Update button states (desabilitar apenas visualmente, mas permitir loop)
+        prevBtn.style.opacity = '1';
+        nextBtn.style.opacity = '1';
     }
     
     function slideNext() {
-        if (currentIndex < logos.length - logosPerView) {
-            currentIndex++;
-            updateSlider();
+        currentIndex++;
+        // Loop: se chegou ao fim, volta ao início
+        if (currentIndex > logos.length - logosPerView) {
+            currentIndex = 0;
         }
+        updateSlider();
     }
     
     function slidePrev() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
+        currentIndex--;
+        // Loop: se está no início, vai para o fim
+        if (currentIndex < 0) {
+            currentIndex = Math.max(0, logos.length - logosPerView);
+        }
+        updateSlider();
+    }
+    
+    function startAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(slideNext, autoPlayDelay);
+    }
+    
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
         }
     }
     
     // Event listeners
-    nextBtn.addEventListener('click', slideNext);
-    prevBtn.addEventListener('click', slidePrev);
+    nextBtn.addEventListener('click', () => {
+        slideNext();
+        stopAutoPlay();
+        startAutoPlay(); // Restart after manual navigation
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        slidePrev();
+        stopAutoPlay();
+        startAutoPlay(); // Restart after manual navigation
+    });
+    
+    // Pause on hover
+    slider.addEventListener('mouseenter', stopAutoPlay);
+    slider.addEventListener('mouseleave', startAutoPlay);
     
     // Recalculate on resize
     let resizeTimeout;
@@ -204,7 +235,7 @@ function initPartnersSlider() {
             calculateSlideWidth();
             // Reset to first slide if current position is invalid
             if (currentIndex > logos.length - logosPerView) {
-                currentIndex = Math.max(0, logos.length - logosPerView);
+                currentIndex = 0;
             }
             updateSlider();
         }, 250);
@@ -213,4 +244,5 @@ function initPartnersSlider() {
     // Initialize
     calculateSlideWidth();
     updateSlider();
+    startAutoPlay();
 }
