@@ -195,23 +195,21 @@ function initPartnersSlider() {
     function slideNext() {
         if (isTransitioning) return;
         
+        // Remove transição para auto-play
+        track.style.transition = 'none';
+        
         currentIndex++;
         updateSlider();
         
-        // Quando chegar ao fim das logos originais, resetar para o início sem transição
+        // Quando chegar ao fim das logos originais, resetar para o início
         if (currentIndex >= totalLogos) {
             isTransitioning = true;
-            // Aguarda a transição terminar
-            setTimeout(() => {
-                track.style.transition = 'none';
-                currentIndex = 0;
-                updateSlider();
-                // Força reflow
-                void track.offsetWidth;
-                // Reabilita transição
-                track.style.transition = '';
-                isTransitioning = false;
-            }, 500); // Tempo da transição CSS
+            // Reset instantâneo
+            currentIndex = 0;
+            updateSlider();
+            // Força reflow
+            void track.offsetWidth;
+            isTransitioning = false;
         }
     }
     
@@ -248,12 +246,16 @@ function initPartnersSlider() {
     
     // Event listeners
     nextBtn.addEventListener('click', () => {
+        // Restaura transição para navegação manual
+        track.style.transition = '';
         slideNext();
         stopAutoPlay();
         startAutoPlay(); // Restart after manual navigation
     });
     
     prevBtn.addEventListener('click', () => {
+        // Restaura transição para navegação manual
+        track.style.transition = '';
         slidePrev();
         stopAutoPlay();
         startAutoPlay(); // Restart after manual navigation
