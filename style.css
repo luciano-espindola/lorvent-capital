@@ -518,8 +518,9 @@ nav {
 
 /* Ajuste específico para logo Rodobens */
 .partner-logo img[alt="Rodobens"] {
-    max-width: 140%;
-    max-height: 140%;
+    max-width: 150%;
+    max-height: 150%;
+    opacity: 0.9;
 }
 
 .slider-btn {
