@@ -820,7 +820,7 @@ footer {
     
     .partners-slider {
         margin: 2rem auto 0;
-        padding: 0 3rem;
+        padding: 0;
     }
     
     .partners-track {
@@ -837,13 +837,6 @@ footer {
         width: 40px;
         height: 40px;
         font-size: 1rem;
-    }
-    
-    .slider-btn.prev-btn {
-        left: 0;
-    }
-    
-    .slider-btn.next-btn {
-        right: 0;
+        margin: 1.5rem 0.5rem 0;
     }
 }
