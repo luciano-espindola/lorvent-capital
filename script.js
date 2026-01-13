@@ -68,18 +68,45 @@ window.addEventListener('scroll', () => {
 function handleFormSubmit(event) {
     event.preventDefault();
     
-    // Simulate loading
     const btn = event.target.querySelector('button');
     const originalText = btn.innerText;
     btn.innerText = 'Enviando...';
     btn.disabled = true;
 
-    setTimeout(() => {
-        alert('Obrigado! Sua solicitação foi recebida. Entraremos em contato em breve para agendar uma consultoria.');
-        event.target.reset();
+    // Coletar dados do formulário
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        type: document.getElementById('type').value,
+        message: document.getElementById('message').value
+    };
+
+    // Enviar email usando API do Vercel
+    fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Obrigado! Sua solicitação foi recebida. Entraremos em contato em breve para agendar uma consultoria.');
+            event.target.reset();
+        } else {
+            throw new Error(data.error || 'Erro ao enviar');
+        }
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        alert('Erro ao enviar mensagem. Por favor, tente novamente ou entre em contato diretamente por email: lucianoespindola@gmail.com');
+    })
+    .finally(() => {
         btn.innerText = originalText;
         btn.disabled = false;
-    }, 1500);
+    });
 }
 
 // Intersection Observer for Animations
