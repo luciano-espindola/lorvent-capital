@@ -146,15 +146,25 @@ function initPartnersSlider() {
     const track = slider.querySelector('.partners-track');
     const prevBtn = slider.querySelector('.prev-btn');
     const nextBtn = slider.querySelector('.next-btn');
-    const logos = track.querySelectorAll('.partner-logo');
+    const originalLogos = track.querySelectorAll('.partner-logo');
     
-    if (logos.length === 0) return;
+    if (originalLogos.length === 0) return;
+    
+    // Duplicar logos para criar loop infinito
+    originalLogos.forEach(logo => {
+        const clone = logo.cloneNode(true);
+        track.appendChild(clone);
+    });
+    
+    const allLogos = track.querySelectorAll('.partner-logo');
+    const totalLogos = originalLogos.length;
     
     let currentIndex = 0;
     let logosPerView = 4; // Desktop: 4 logos
     let slideWidth = 0;
     let autoPlayInterval = null;
     const autoPlayDelay = 2000; // 2 segundos
+    let isTransitioning = false;
     
     // Calculate slide width based on viewport
     function calculateSlideWidth() {
@@ -175,7 +185,7 @@ function initPartnersSlider() {
         const translateX = -currentIndex * slideWidth;
         track.style.transform = `translateX(${translateX}px)`;
         
-        // Botões sempre habilitados para permitir loop infinito
+        // Botões sempre habilitados
         prevBtn.style.opacity = '1';
         nextBtn.style.opacity = '1';
         prevBtn.disabled = false;
@@ -183,31 +193,45 @@ function initPartnersSlider() {
     }
     
     function slideNext() {
+        if (isTransitioning) return;
+        
         currentIndex++;
-        // Loop infinito: se chegou ao fim, volta ao início de forma suave
-        if (currentIndex > logos.length - logosPerView) {
-            // Aguarda a transição terminar antes de resetar
+        updateSlider();
+        
+        // Quando chegar ao fim das logos originais, resetar para o início sem transição
+        if (currentIndex >= totalLogos) {
+            isTransitioning = true;
+            // Aguarda a transição terminar
             setTimeout(() => {
-                // Desabilita transição temporariamente para reset instantâneo
                 track.style.transition = 'none';
                 currentIndex = 0;
                 updateSlider();
-                // Força reflow para aplicar o reset
+                // Força reflow
                 void track.offsetWidth;
-                // Reabilita transição para próxima animação
+                // Reabilita transição
                 track.style.transition = '';
-            }, 600); // Aguarda o tempo da transição CSS (0.6s)
+                isTransitioning = false;
+            }, 500); // Tempo da transição CSS
         }
-        updateSlider();
     }
     
     function slidePrev() {
+        if (isTransitioning) return;
+        
         currentIndex--;
-        // Loop: se está no início, vai para o fim
+        
+        // Se estiver no início, vai para o fim das logos originais
         if (currentIndex < 0) {
-            currentIndex = Math.max(0, logos.length - logosPerView);
+            isTransitioning = true;
+            track.style.transition = 'none';
+            currentIndex = totalLogos - 1;
+            updateSlider();
+            void track.offsetWidth;
+            track.style.transition = '';
+            isTransitioning = false;
+        } else {
+            updateSlider();
         }
-        updateSlider();
     }
     
     function startAutoPlay() {
