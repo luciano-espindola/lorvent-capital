@@ -694,6 +694,34 @@ footer {
     color: var(--accent-gold);
 }
 
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-dim);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: rgba(184, 134, 11, 0.2);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
