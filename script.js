@@ -175,26 +175,30 @@ function initPartnersSlider() {
         const translateX = -currentIndex * slideWidth;
         track.style.transform = `translateX(${translateX}px)`;
         
-        // Update button states (desabilitar apenas visualmente, mas permitir loop)
+        // Botões sempre habilitados para permitir loop infinito
         prevBtn.style.opacity = '1';
         nextBtn.style.opacity = '1';
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
     }
     
     function slideNext() {
         currentIndex++;
         // Loop infinito: se chegou ao fim, volta ao início de forma suave
         if (currentIndex > logos.length - logosPerView) {
-            // Desabilita transição temporariamente para reset instantâneo
-            track.style.transition = 'none';
-            currentIndex = 0;
-            updateSlider();
-            // Força reflow para aplicar o reset
-            void track.offsetWidth;
-            // Reabilita transição para próxima animação
-            track.style.transition = '';
-        } else {
-            updateSlider();
+            // Aguarda a transição terminar antes de resetar
+            setTimeout(() => {
+                // Desabilita transição temporariamente para reset instantâneo
+                track.style.transition = 'none';
+                currentIndex = 0;
+                updateSlider();
+                // Força reflow para aplicar o reset
+                void track.offsetWidth;
+                // Reabilita transição para próxima animação
+                track.style.transition = '';
+            }, 600); // Aguarda o tempo da transição CSS (0.6s)
         }
+        updateSlider();
     }
     
     function slidePrev() {
