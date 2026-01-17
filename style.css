@@ -448,6 +448,37 @@ nav {
     margin-bottom: 1.5rem;
     color: var(--text-dim);
     font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-content h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    text-align: left;
+}
+
+.about-content h3:first-of-type {
+    margin-top: 3rem;
+}
+
+.about-content ul {
+    text-align: left;
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.about-content ul li {
+    margin-bottom: 0.8rem;
+}
+
+.about-content ul li strong {
+    color: var(--text-light);
 }
 
 .founder-badge {
