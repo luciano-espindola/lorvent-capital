@@ -1164,6 +1164,16 @@ select.form-control {
     opacity: 1;
 }
 
+.author-company a {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.author-company a:hover {
+    transform: scale(1.05);
+}
+
 .author-company img {
     max-width: 100%;
     height: auto;
