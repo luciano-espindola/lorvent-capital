@@ -1083,14 +1083,19 @@ select.form-control {
 }
 
 .testimonial-text {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     line-height: 1.9;
     color: var(--text-light);
     font-style: italic;
     padding: 0 2rem;
     position: relative;
     z-index: 2;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-text:last-of-type {
+    margin-bottom: 0;
 }
 
 .testimonial-author {
