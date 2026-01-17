@@ -529,8 +529,38 @@ nav {
     border-radius: 999px;
     border: 1px solid rgba(184, 134, 11, 0.6);
     padding: 4px 10px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     width: fit-content;
+}
+
+.founder-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(184, 134, 11, 0.4);
+    margin: 0 auto 20px auto;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.founder-image::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--accent-gold), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .founder-role {
