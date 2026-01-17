@@ -326,12 +326,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    display: none; /* Hidden by default */
     animation: fadeIn 0.5s ease;
-}
-
-.service-grid.active {
-    display: grid;
 }
 
 @keyframes fadeIn {
