@@ -724,7 +724,7 @@ nav {
     gap: 10px;
 }
 
-.btn-primary {
+.about-cta .btn-primary {
     background: var(--accent-gold);
     color: var(--primary-color);
     border: none;
@@ -735,15 +735,17 @@ nav {
     transition: all 0.3s ease;
     font-family: var(--font-body);
     font-size: 0.95rem;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
-.btn-primary:hover {
+.about-cta .btn-primary:hover {
     background: #D4AF37;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(184, 134, 11, 0.4);
 }
 
-.btn-secondary {
+.about-cta .btn-secondary {
     background: transparent;
     color: var(--accent-gold);
     border: 1px solid var(--accent-gold);
@@ -755,9 +757,11 @@ nav {
     transition: all 0.3s ease;
     font-family: var(--font-body);
     font-size: 0.95rem;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
-.btn-secondary:hover {
+.about-cta .btn-secondary:hover {
     background: rgba(184, 134, 11, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
